@@ -1,6 +1,6 @@
 package Main.Controller;
 
-public class ProductManager { //Me hace las 5 funciones:
+public interface ProductManager { //Me hace las 5 funciones:
 
     //1-Listado de productos ordenado (ascendiente) por precio
 
