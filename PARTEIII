@@ -1,0 +1,24 @@
+Una forma de implementación sería tener dos tablas, una para Usuarios y otra para Productos,
+cuyas claves primárias fueran las claves foráneas de una tercera tabla Ordenes que las
+relacionara entre sí.
+
+DE ESTA MANERA:
+
+tabla Usuarios:
+    (int)       userid (clave primaria)
+    (String)    username
+    (String)    password
+
+tabla Productos:
+    (int)       productid (clave primaria)
+    (String)    name
+    (int)       cost
+
+tabla Ordenes:
+    (int)       ordenid (clave primaria)
+    (int)       userid (clave foranea)
+    (int)       productid (clave foranea)
+
+
+Relación:
+Usuarios N:Pedidos M -> A través de la tabla Ordenes.

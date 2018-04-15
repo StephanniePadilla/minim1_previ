@@ -8,13 +8,13 @@ public class Producto {
     private int cost;
 
     //Constructores (para inicializar con estas variables)
+    public Producto() {
+    }
+
     public Producto(int id, String name, int cost) {
         this.id = id;
         this.name = name;
         this.cost = cost;
-    }
-
-    public Producto() {
     }
 
     //Getters and Setters
