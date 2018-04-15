@@ -38,12 +38,14 @@ public class ProductManagerImpl implements ProductManager { //Implementada como 
         return servedOrdenes;
     }
 
-    //Public functions
+//Public functions INICIO
+    //1-Listado de productos ordenado (ascendiente) por precio
     public List<Producto> getAllServedProductsSortedByCost() {
         logger.info("getAllProducts: Retreiving All user products ordered by cost...");
         return sortProductsByCost(getAllServedProducts());
     }
 
+    //2-Realizar un pedido (de diferentes productos y diferentes cantidades) por parte de un usuario identificado
     public boolean makeOrder (int userId, List<Producto> products) {
         logger.info("serveOrder: Making an order...");
         this.ordenes.add(new Orden(userId, false, products));
@@ -52,6 +54,7 @@ public class ProductManagerImpl implements ProductManager { //Implementada como 
         return true;
     }
 
+    //3-Servir pedido. Los servicios se realizan en orden de llegadas.
     public boolean serveOrder() {
         logger.info("serveOrder: Serving an order..");
 
@@ -68,6 +71,7 @@ public class ProductManagerImpl implements ProductManager { //Implementada como 
         }
     }
 
+    //4-Listado de pedidos de un usuario que ya hayan sido realizados
     public List<Orden> getAllServedUserOrders(int userId) {
         List<Orden> temp = new ArrayList<>();
         if (isUserOnQueue(userId)) {
@@ -85,6 +89,7 @@ public class ProductManagerImpl implements ProductManager { //Implementada como 
         }
     }
 
+    //5-Listado de productos ordenado (descendiente) por número de ventas
     public List<Producto> getAllProductsSortedByNoSales() {
         if (!servedOrdenes.isEmpty()) {
             logger.info("sortProductsByNoSales: Sorting all products by no. sales, if no null It's okay");
@@ -96,6 +101,8 @@ public class ProductManagerImpl implements ProductManager { //Implementada como 
         }
 
     }
+//Public functions FIN
+
 
     //Private functions
     private List<Producto> sortProductsByCost(List<Producto> products) {
