@@ -5,19 +5,19 @@ relacionara entre sí.
 DE ESTA MANERA:
 
 tabla Usuarios:
-    (int)       userid (clave primaria)
+    (int)       userid      (clave primaria)
     (String)    username
     (String)    password
 
 tabla Productos:
-    (int)       productid (clave primaria)
+    (int)       productid   (clave primaria)
     (String)    name
     (int)       cost
 
 tabla Ordenes:
-    (int)       ordenid (clave primaria)
-    (int)       userid (clave foranea)
-    (int)       productid (clave foranea)
+    (int)       ordenid     (clave primaria)
+    (int)       userid      (clave foranea)
+    (int)       productid   (clave foranea)
 
 
 Relación:
