@@ -23,7 +23,7 @@ public class ProductManagerImpl implements ProductManager { //Implementada como 
         return instance;
     }
 
-    //Constructors
+    //Constructores
     public ProductManagerImpl() {
         this.ordenes = new ArrayDeque<>();
         this.servedOrdenes = new ArrayList<>();

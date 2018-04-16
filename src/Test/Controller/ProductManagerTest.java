@@ -35,11 +35,11 @@ public class ProductManagerTest {//Realizo los 4 métodos
     @Before //Junit4
     public void setUp() throws Exception {
 
-        usr1 = new Usuario(1, "Marc");
-        usr2 = new Usuario(2, "Gerard");
+        usr1 = new Usuario ("Marc");
+        usr2 = new Usuario("Gerard");
 
-        item1 = new Producto(1,"Sandwich",3);
-        item2 = new Producto(2,"Coffee", 1);
+        item1 = new Producto("Sandwich",3);
+        item2 = new Producto("Coffee", 1);
 
         products = new ArrayList<>();
         products2 = new ArrayList<>();

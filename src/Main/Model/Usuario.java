@@ -3,6 +3,7 @@ package Main.Model;
 public class Usuario {
 
     //Declaro los atributos PRIVADOS
+    private static int num = 0;     //Cantidad de usuarios registrados
     private int id;
     private String username;
 
@@ -12,13 +13,13 @@ public class Usuario {
     public Usuario () {
     }
 
-    public Usuario(int id, String username) {
-        this.id = id;
+    public Usuario(String username) {
+        this.id = ++num;
         this.username = username;
     }
 
-    public Usuario(int id, String username, String password) {
-        this.id = id;
+    public Usuario(String username, String password) {
+        this.id = ++num;
         this.username = username;
         this.password = password;
     }
@@ -26,10 +27,6 @@ public class Usuario {
     //Getters and Setters
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getUsername() {

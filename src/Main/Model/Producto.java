@@ -3,6 +3,7 @@ package Main.Model;
 public class Producto {
 
     //Declaro los atributos PRIVADOS
+    private static int num = 0;     //Cantidad de usuarios registrados
     private int id;
     private String name;
     private int cost;
@@ -11,8 +12,8 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(int id, String name, int cost) {
-        this.id = id;
+    public Producto(String name, int cost) {
+        this.id = ++num;
         this.name = name;
         this.cost = cost;
     }
@@ -20,10 +21,6 @@ public class Producto {
     //Getters and Setters
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
