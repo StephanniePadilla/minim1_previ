@@ -23,8 +23,8 @@ public class ProductManagerImpl implements ProductManager { //Implementada como 
         return instance;
     }
 
-    //Constructores
-    public ProductManagerImpl() {
+    //Constructor del singleton DEBE SER PRIVADO
+    private ProductManagerImpl() {
         this.ordenes = new ArrayDeque<>();
         this.servedOrdenes = new ArrayList<>();
     }
@@ -60,7 +60,7 @@ public class ProductManagerImpl implements ProductManager { //Implementada como 
 
         if(!ordenes.isEmpty()) {
             this.servedOrdenes.add(this.ordenes.element());
-            this.ordenes.remove();
+            this.ordenes.remove(); //añadir propiedad para sumar No ventas de cada producto
 
             logger.info("serveOrder: An order has been served");
             return true;

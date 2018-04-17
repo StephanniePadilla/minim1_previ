@@ -7,6 +7,7 @@ import Main.Model.Usuario;
 import javax.inject.Singleton;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.ArrayList;
 import java.util.List;
 
 import static Main.Controller.ProductManagerImpl.*;
@@ -16,8 +17,48 @@ import static Main.Controller.ProductManagerImpl.*;
 
 public class ProductManagerService {
 
+    private Usuario usr1;
+    private Usuario usr2;
+
+    private Producto item1;
+    private Producto item2;
+
+    Orden userOrder1;
+    Orden userOrder2;
+
+    private List<Producto> products;
+    private List<Producto> products2;
+
+    //Constructor del ProductManagerService
+    public ProductManagerService() {
+        System.out.println("ProductManagerService!!!!!!!!!!!");
+
+        usr1 = new Usuario ("Marc");
+        usr2 = new Usuario("Gerard");
+
+        item1 = new Producto("Sandwich",3);
+        item2 = new Producto("Coffee", 1);
+
+        products = new ArrayList<>();
+        products2 = new ArrayList<>();
+
+        products.add(item1);
+        products.add(item2);
+
+        products2.add(item1);
+        products2.add(item1);
+        products2.add(item1);
+
+        userOrder1 = new Orden(usr1.getId(),false, products);
+        userOrder2 = new Orden(usr2.getId(),false, products2);
+
+        getInstance().makeOrder(usr2.getId(), products2);
+        getInstance().serveOrder();
+    }
+
     //Testing purposes "/products"
     @GET
+    @Path("/Hello")
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
         return "Got it!";
@@ -32,11 +73,11 @@ public class ProductManagerService {
     }
 
     //2-Realizar un pedido (de diferentes productos y diferentes cantidades) por parte de un usuario identificado
-    @POST
+   /*@POST
     @Path("/{id}/makeOrder")
-    public Boolean makeOrderService(@PathParam("id") int userId, List<Producto> products) {
+    public Boolean makeOrderService(OrderTO orderTO) {
         return getInstance().makeOrder(userId, products);
-    }
+    }*/
 
     //3-Servir pedido. Los servicios se realizan en orden de llegadas.
     @GET

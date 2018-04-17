@@ -8,6 +8,8 @@ import org.glassfish.jersey.server.ResourceConfig;
 import java.net.URI;
 
 public class App {
+    //Aqui creo la conexión con REST
+
     public static final String BASE_URI = "http://localhost:8080/minim1_previ/";
 
     /**
@@ -17,7 +19,7 @@ public class App {
 
     public static HttpServer startServer() {
         // set a resource config that scans for JAX-RS resources and providers
-        final ResourceConfig rc = new ResourceConfig().packages("main.Controller");
+        final ResourceConfig rc = new ResourceConfig().packages("Main.Controller");
 
         // set and start a new instance of grizzly http server
         // exposing the Jersey application at BASE_URI
