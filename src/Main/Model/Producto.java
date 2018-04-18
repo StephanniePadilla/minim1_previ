@@ -39,4 +39,25 @@ public class Producto {
         this.cost = cost;
     }
 
+    /*
+    //boton derecho- generate- equals() and hashcode()- pestaña 1: no escojo nada- pestaña i escojo lo que haya.
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Producto producto = (Producto) o;
+
+        if (id != producto.id) return false;
+        if (cost != producto.cost) return false;
+        return name.equals(producto.name);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + name.hashCode();
+        result = 31 * result + cost;
+        return result;
+    }*/
 }

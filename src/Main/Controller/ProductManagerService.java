@@ -53,7 +53,7 @@ public class ProductManagerService {
         userOrder2 = new Orden(usr2.getId(),false, products2);
 
         getInstance().makeOrder(usr2.getId(), products2);
-        getInstance().serveOrder();
+        //getInstance().serveOrder();
     }
 
     //Testing purposes "/products"
@@ -73,6 +73,26 @@ public class ProductManagerService {
     }
 
     //2-Realizar un pedido (de diferentes productos y diferentes cantidades) por parte de un usuario identificado
+    @POST
+    @Path("/{id}/makeOrder")
+    public Boolean makeOrderService(@PathParam("id") int userId, List<Producto> products) {
+        return getInstance().makeOrder(userId, products);
+    }
+
+    /*PARA PONER EN POSTMAN: (tener en cuenta que hay que estar en body:"raw" y en header tener: "Content-Type: application/json")
+    * localhost:8080/minim1_previ/orders/1/makeOrder
+    * [
+	{
+		"name":"Sandwich",
+		"cost":3
+	},
+	{
+		"name":"Coffee",
+		"cost":1
+	}
+        ]
+    * */
+
    /*@POST
     @Path("/{id}/makeOrder")
     public Boolean makeOrderService(OrderTO orderTO) {

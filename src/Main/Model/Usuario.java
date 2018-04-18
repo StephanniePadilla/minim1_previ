@@ -10,7 +10,7 @@ public class Usuario {
     private String password;
 
     //Constructores (para inicializar con estas variables)
-    public Usuario () {
+    public Usuario () {//contructor para el POST
     }
 
     public Usuario(String username) {
